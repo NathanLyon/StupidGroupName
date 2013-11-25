@@ -85,12 +85,13 @@ namespace LucasFivas.DisjointSet
 
         public void Union(Set<T> keptSet, Set<T> absorbedSet)
         {
-            for (int i = 0; i < absorbedSet.Count; i++)
-            {
-                T item = absorbedSet[i];
-                keptSet.Add(item);
-                universe[item] = keptSet;
-            }
+            if (keptSet != absorbedSet)
+                for (int i = 0; i < absorbedSet.Count; i++)
+                {
+                    T item = absorbedSet[i];
+                    keptSet.Add(item);
+                    universe[item] = keptSet;
+                }
         }
 
         public void MakeSet(T item)
