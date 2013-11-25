@@ -85,8 +85,9 @@ namespace LucasFivas.DisjointSet
 
         public void Union(Set<T> keptSet, Set<T> absorbedSet)
         {
-            foreach (T item in absorbedSet)
+            for (int i = 0; i < absorbedSet.Count; i++)
             {
+                T item = absorbedSet[i];
                 keptSet.Add(item);
                 universe[item] = keptSet;
             }
@@ -125,6 +126,9 @@ namespace LucasFivas.DisjointSet
             return universe.Keys.GetEnumerator();
         }
     }
+
+
+
 
     public class Set<T> : List<T>
     {
