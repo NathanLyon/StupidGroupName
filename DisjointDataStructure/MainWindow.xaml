@@ -8,12 +8,22 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Label Content="Disjoint Dataset Structure 2000!" HorizontalAlignment="Left" Margin="195,10,0,0" VerticalAlignment="Top" Height="80" Width="573" FontSize="40"/>
-        <Button Content="GO!" HorizontalAlignment="Left" Margin="299,349,0,0" Grid.Row="1" VerticalAlignment="Top" Width="330" Height="68" Click="Button_Click" FontSize="40"/>
+        <Button Content="GO!" HorizontalAlignment="Left" Margin="286,343,0,0" Grid.Row="1" VerticalAlignment="Top" Width="330" Height="68" Click="Button_Click" FontSize="40"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="268" Margin="71,47,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="369"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="268" Margin="481,47,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="369"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="268" Margin="481,47,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="376"/>
         <Label Content="Implementation One" HorizontalAlignment="Left" Margin="71,16,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Implementation Two" HorizontalAlignment="Left" Margin="481,16,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="MakeSet" HorizontalAlignment="Left" Margin="86,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60"/>
         <Label Content="MakeSet" HorizontalAlignment="Left" Margin="505,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Find" HorizontalAlignment="Left" Margin="86,156,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Find" HorizontalAlignment="Left" Margin="505,156,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Union" HorizontalAlignment="Left" Margin="86,239,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="Union" HorizontalAlignment="Left" Margin="505,239,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="mksetOne" HorizontalAlignment="Left" Height="23" Margin="86,91,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
+        <TextBox x:Name="mksetTwo" HorizontalAlignment="Left" Height="23" Margin="505,91,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
+        <TextBox x:Name="findOne" HorizontalAlignment="Left" Height="23" Margin="86,182,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
+        <TextBox x:Name="findTwo" HorizontalAlignment="Left" Height="23" Margin="505,182,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
+        <TextBox x:Name="unionOne" HorizontalAlignment="Left" Height="23" Margin="86,270,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
+        <TextBox x:Name="unionTwo" HorizontalAlignment="Left" Height="23" Margin="505,270,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
     </Grid>
 </Window>
