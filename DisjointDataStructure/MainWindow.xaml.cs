@@ -24,5 +24,10 @@ namespace DisjointDataStructure
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //THIS WILL DRIVE EVERYTHING, DON'T LOSE IT!!
+        }
     }
 }
