@@ -39,37 +39,44 @@ namespace DisjointDataStructure
                 ListDisjointSet<int> disjointSet;
                 disjointSet = new ListDisjointSet<int>();
 
-                Stopwatch timer = new Stopwatch();
+                Stopwatch iterationTimer = new Stopwatch();
+                List<long> ticksList = new List<long>();
                 for (int i = 0; i < 10000; i++)
                 {
                     int n = rand.Next();
-                    numbers.Add(n); // this is to help keep track of numbers so we can do unions and lookups later.
-                    timer.Start();
+                    numbers.Add(n);
+                    iterationTimer.Start();
                     disjointSet.MakeSet(n);
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                mksetOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
-                timer.Reset();
+                mksetOne.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
+                ticksList.Clear();
 
-                for (int i = 0; i < numbers.Count; i++)
+                for (int i = 0; i < numbers.Count * 3; i++)
                 {
                     int lookup = numbers[rand.Next(numbers.Count)];
-                    timer.Start();
+                    iterationTimer.Start();
                     disjointSet.Find(lookup);
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                findOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
-                timer.Reset();
+                findOne.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
+                ticksList.Clear();
 
-                for (int i = 0; i < numbers.Count; i++)
+                for (int i = 0; i < numbers.Count * 3; i++)
                 {
                     int lookupA = numbers[rand.Next(numbers.Count)];
                     int lookupB = numbers[rand.Next(numbers.Count)];
-                    timer.Start();
+                    iterationTimer.Start();
                     disjointSet.Union(disjointSet.Find(lookupA), disjointSet.Find(lookupB));
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                unionOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                unionOne.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
             }
             catch (Exception err)
             {
@@ -85,37 +92,44 @@ namespace DisjointDataStructure
                 DisjointDataSet<int> disjointSet;
                 disjointSet = new DisjointDataSet<int>();
 
-                Stopwatch timer = new Stopwatch();
+                Stopwatch iterationTimer = new Stopwatch();
+                List<long> ticksList = new List<long>();
                 for (int i = 0; i < 10000; i++)
                 {
                     int n = rand.Next();
-                    numbers.Add(n); // this is to help keep track of numbers so we can do unions and lookups later.
-                    timer.Start();
+                    numbers.Add(n);
+                    iterationTimer.Start();
                     disjointSet.MakeSet(n);
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                mksetTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
-                timer.Reset();
+                mksetTwo.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
+                ticksList.Clear();
 
-                for (int i = 0; i < numbers.Count; i++)
+                for (int i = 0; i < numbers.Count * 3; i++)
                 {
                     int lookup = numbers[rand.Next(numbers.Count)];
-                    timer.Start();
+                    iterationTimer.Start();
                     disjointSet.Find(lookup);
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                findTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
-                timer.Reset();
+                findTwo.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
+                ticksList.Clear();
 
-                for (int i = 0; i < numbers.Count; i++)
+                for (int i = 0; i < numbers.Count * 3; i++)
                 {
                     int lookupA = numbers[rand.Next(numbers.Count)];
                     int lookupB = numbers[rand.Next(numbers.Count)];
-                    timer.Start();
+                    iterationTimer.Start();
                     disjointSet.Union(lookupA, lookupB);
-                    timer.Stop();
+                    iterationTimer.Stop();
+                    ticksList.Add(iterationTimer.ElapsedTicks);
+                    iterationTimer.Reset();
                 }
-                unionTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                unionTwo.Text = String.Format("Avg : {0}, Max: {1}, Min: {2}", ticksList.Average(), ticksList.Max(), ticksList.Min());
             }
             catch (Exception err)
             {

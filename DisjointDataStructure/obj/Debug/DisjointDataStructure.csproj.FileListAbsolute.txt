@@ -23,3 +23,16 @@ C:\Users\Jerl\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\D
 C:\Users\Jerl\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.g.resources
 C:\Users\Jerl\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.Properties.Resources.resources
 C:\Users\Jerl\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.csproj.GenerateResource.Cache
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\bin\Debug\DisjointDataStructure.exe.config
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.exe
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.pdb
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\bin\Debug\DisjointDataStructure.exe
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\bin\Debug\DisjointDataStructure.pdb
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.csprojResolveAssemblyReference.cache
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\MainWindow.baml
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\MainWindow.g.cs
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\App.g.cs
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure_MarkupCompile.cache
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.g.resources
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.Properties.Resources.resources
+C:\Users\Paul\Documents\GitHub\StupidGroupName\DisjointDataStructure\obj\Debug\DisjointDataStructure.csproj.GenerateResource.Cache
