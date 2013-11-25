@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LucasFivas.DisjointSet
 {
-    public class ListDisjointSet<T> : IEnumerable<T>
+    public class ListDisjointSet<T> : ICollection<T>
     {
         #region inner classes
         public class ItemAlreadyExistsException : Exception { }
@@ -28,10 +28,27 @@ namespace LucasFivas.DisjointSet
         public ListDisjointSet()
         {
             universe = new Dictionary<T,Set<T>>();
+            IsReadOnly = false;
         }
         #endregion
 
-        #region general collection methods stuff
+        #region ICollection
+        public bool IsReadOnly { get; private set; }
+        
+        public void Clear()
+        {
+            universe.Clear();
+        }
+
+        public void CopyTo(T[] array, int index)
+        {
+            foreach (T key in universe.Keys)
+            {
+                array[index] = key;
+                index++;
+            }
+        }
+
         public bool Contains(T item)
         {
             return universe.ContainsKey(item);
@@ -48,10 +65,15 @@ namespace LucasFivas.DisjointSet
             universe.Add(item, universe[setKey]);
         }
 
-        public void Remove(T item)
+        public bool Remove(T item)
         {
-            universe[item].Remove(item);
-            universe.Remove(item);
+            if (universe.ContainsKey(item))
+            {
+                universe[item].Remove(item);
+                universe.Remove(item);
+                return true;
+            }
+            return false;
         }
         #endregion
 
