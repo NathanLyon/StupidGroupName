@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 using LucasFivas.DisjointSet;
 using paulbaker;
 
@@ -29,33 +30,96 @@ namespace DisjointDataStructure
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //THIS WILL DRIVE EVERYTHING, DON'T LOSE IT!!
+
+            //LUCAS
             try
             {
-                Random lucasRand = new Random(42);
-                List<int> lnum = new List<int>();
-                for (int i = 0; i < 1000; i++)
+                Random rand = new Random(42);
+                List<int> numbers = new List<int>();
+                ListDisjointSet<int> disjointSet;
+                disjointSet = new ListDisjointSet<int>();
+
+                Stopwatch timer = new Stopwatch();
+                for (int i = 0; i < 10000; i++)
                 {
-                    lnum.Add(lucasRand.Next());
+                    int n = rand.Next();
+                    numbers.Add(n); // this is to help keep track of numbers so we can do unions and lookups later.
+                    timer.Start();
+                    disjointSet.MakeSet(n);
+                    timer.Stop();
                 }
+                mksetOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                timer.Reset();
 
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    int lookup = numbers[rand.Next(numbers.Count)];
+                    timer.Start();
+                    disjointSet.Find(lookup);
+                    timer.Stop();
+                }
+                findOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                timer.Reset();
 
-
-                ListDisjointSet<int> lucas;
-                lucas = new ListDisjointSet<int>();
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    int lookupA = numbers[rand.Next(numbers.Count)];
+                    int lookupB = numbers[rand.Next(numbers.Count)];
+                    timer.Start();
+                    disjointSet.Union(disjointSet.Find(lookupA), disjointSet.Find(lookupB));
+                    timer.Stop();
+                }
+                unionOne.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
             }
             catch (Exception err)
             {
+                Console.WriteLine(err.StackTrace);
             }
 
+
+            //PAUL
             try
             {
-                Random paulRand = new Random(42);
-                DisjointDataSet<int> paul;
-                paul = new DisjointDataSet<int>();
+                Random rand = new Random(42);
+                List<int> numbers = new List<int>();
+                DisjointDataSet<int> disjointSet;
+                disjointSet = new DisjointDataSet<int>();
+
+                Stopwatch timer = new Stopwatch();
+                for (int i = 0; i < 10000; i++)
+                {
+                    int n = rand.Next();
+                    numbers.Add(n); // this is to help keep track of numbers so we can do unions and lookups later.
+                    timer.Start();
+                    disjointSet.MakeSet(n);
+                    timer.Stop();
+                }
+                mksetTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                timer.Reset();
+
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    int lookup = numbers[rand.Next(numbers.Count)];
+                    timer.Start();
+                    disjointSet.Find(lookup);
+                    timer.Stop();
+                }
+                findTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
+                timer.Reset();
+
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    int lookupA = numbers[rand.Next(numbers.Count)];
+                    int lookupB = numbers[rand.Next(numbers.Count)];
+                    timer.Start();
+                    disjointSet.Union(lookupA, lookupB);
+                    timer.Stop();
+                }
+                unionTwo.Text = String.Format("Avg MS: {0}", timer.ElapsedMilliseconds / 1000);
             }
             catch (Exception err)
             {
+                Console.WriteLine(err.StackTrace);
             }
         }
     }
